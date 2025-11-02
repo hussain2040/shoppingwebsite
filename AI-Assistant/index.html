@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="assistant-header">
+            <div class="avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1>Personal AI Assistant</h1>
+            <p class="subtitle">Aapka Digital Sahayak</p>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <i class="fas fa-hand-sparkles"></i>
+                <p>Namaste! Main aapka AI assistant hoon. Aap mujhse kuch bhi pooch sakte hain!</p>
+                <div class="suggestions">
+                    <button class="suggestion-btn" onclick="sendCommand('time kya hai')">Time batao</button>
+                    <button class="suggestion-btn" onclick="sendCommand('joke sunao')">Joke sunao</button>
+                    <button class="suggestion-btn" onclick="sendCommand('calculator')">Calculator</button>
+                    <button class="suggestion-btn" onclick="sendCommand('weather')">Weather</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <button class="voice-btn" id="voiceBtn" onclick="startVoiceRecognition()">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <input type="text" id="userInput" placeholder="Yahan type karein ya mic button dabayein..." onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+
+        <div class="status-bar">
+            <span id="statusText">Ready</span>
+            <span class="listening-indicator" id="listeningIndicator">
+                <i class="fas fa-circle"></i> Listening...
+            </span>
+        </div>
+
+        <div class="features-panel">
+            <h3>Available Commands:</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <span>Time/Date</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculator</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span>Weather</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <span>Web Search</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <span>Reminders</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-laugh"></i>
+                    <span>Jokes</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <span>Wikipedia</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
